@@ -29,6 +29,14 @@ grunt.initConfig({
             { src: "lib/helper-module.js", dest: "artifacts/amd/helper-module.js" }
         },
         usingDynamicExpansion: {
+            options: {
+                    // deps: 'jQuery' 
+                    // deps: ['jQuery', 'other']
+                    deps: {
+                            jQuery: 'jquery'
+                            other: 'other'
+                        }
+                },
             expand: true,
             cwd: "lib/",
             src: ["*.js"],
